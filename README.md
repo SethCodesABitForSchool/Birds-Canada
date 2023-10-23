@@ -1,27 +1,23 @@
 # Birds-Canada
 Birds Canada Simulation Data 
 
-# Set seed 
-set.seed(123)
+# Set seed - 3 variables - Create a data frame
+- set.seed(123)
 
-# years from 1920 to 2023
-years <- 1920:2023
+- years <- 1920:2023
 
-# Generate data for three variables: Temperature, Habitat Loss, and Food Availability
-temperature <- rnorm(length(years), mean = 20, sd = 5)  # Normal distribution for temperature
+- temperature <- rnorm(length(years), mean = 20, sd = 5)  # Normal distribution for temperature
 habitat_loss <- runif(length(years), min = 0, max = 30)   # Uniform distribution for habitat loss
 food_availability <- rpois(length(years), lambda = 50)    # Poisson distribution for food availability
 
 # Calculate bird populations based on the three variables
 
-bird_population <- 1000 + 5 * temperature - 2 * habitat_loss + 3 * log(food_availability) + rnorm(length(years), mean = 0, sd = 100)
+- bird_population <- 1000 + 5 * temperature - 2 * habitat_loss + 3 * log(food_availability) + rnorm(length(years), mean = 0, sd = 100)
 
-# add number of chicks
-number_of_chicks <- rpois(length(years), lambda = 10)  # Poisson distribution for the number of chicks
+- number_of_chicks <- rpois(length(years), lambda = 10)  # Poisson distribution for the number of chicks _______#add number of chicks
 
-# Create a data frame
 
-bird_data <- data.frame(
+- bird_data <- data.frame(
   Year = years,
   Temperature = temperature,
   HabitatLoss = habitat_loss,
@@ -37,7 +33,8 @@ bird_data <- data.frame(
 
 
 
-# Install and load the openxlsx package 
+# Codes to Export the data to an excel file 
+
 - install.packages("openxlsx")
 - library(openxlsx)
 
@@ -49,6 +46,8 @@ bird_data <- data.frame(
 
 
 - cat("Data exported to:", file_path, "\n")
+
+# Creating data 2 
 
 - install.packages("tidyr")
 - library(tidyr)
@@ -114,7 +113,7 @@ bird_data <- data.frame(
 
 - install.packages("writexl")
 - library(writexl)
--  file_path <- "/Users/sethmenon/Downloads/combined.xlsx"
+- file_path <- "/Users/sethmenon/Downloads/combined.xlsx"
 
 
 - write_xlsx(combined_data, path = file_path)
