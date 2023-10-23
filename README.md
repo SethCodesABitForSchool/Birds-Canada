@@ -214,9 +214,21 @@ Birds Canada Simulation Data
 ![image](https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/9bd860d3-3ae6-4f8c-ac05-dc7aeb91cdcc)
 
 
+# linear regression model - For Ontario 
+
+- final_data_modified$Chicks_Survived_Ontario <- as.numeric(final_data_modified$Chicks_Survived_Ontario == "Yes")
+- model <- lm(Population_Ontario ~ Temperature_Ontario + HabitatLoss_Ontario + FoodAvailability_Ontario + Chicks_Survived_Ontario, data = final_data_modified)
+- summary(model)
+
+<img width="800" alt="Screen Shot 2023-10-23 at 5 36 21 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/8e4ad2ce-7407-468c-a1b8-a87be45d6d11">
 
 
+# The analysis says 
 
-
-
+- Temperature_Ontario (7.5598): For a one-unit increase in Temperature_Ontario, Population_Ontario is expected to increase by 7.5598 units, holding other variables constant.
+- HabitatLoss_Ontario (-4.6760): For a one-unit increase in HabitatLoss_Ontario, Population_Ontario is expected to decrease by 4.6760 units, holding other variables constant.
+- The effect of FoodAvailability_Ontario on Population_Ontario is not statistically significant.
+- The coefficient for Chicks_Survived_Ontario is NA - perfect multicollinearity.
+- The o/p say that both Temperature_Ontario and HabitatLoss_Ontario have statistically significant associations with the population of Ontario, as evidenced by their low p-values.
+- Specifically, an increase in temperature is positively correlated with population growth, while habitat loss exhibits a negative correlation. 
 
