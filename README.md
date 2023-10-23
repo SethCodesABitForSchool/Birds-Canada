@@ -149,15 +149,14 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
   mutate(Chicks_Survived_Ontario = ifelse(NumberOfChicks_Ontario > 0, "Yes", "No"),
          Chicks_Survived_Manitoba = ifelse(NumberOfChicks_Manitoba > 0, "Yes", "No"))
 
-# THE FINAL DATA 
+# THE FINAL DATA - Changed the values of the variables as it is similar - this is so the plot will differ
+
 - final_data <- combined_data_wide2 %>%
   select(Year, starts_with("Temperature"), starts_with("HabitatLoss"), starts_with("FoodAvailability"),
          starts_with("Population"), starts_with("Chicks_Survived"))
 
 
 - head(final_data)
-
-<img width="1378" alt="Screen Shot 2023-10-23 at 5 20 56 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/dbdca2bd-cde1-43b6-8979-9f6c506615f0">
 
 - library(writexl)
 
@@ -169,9 +168,6 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 
 
 - cat("Data exported to", file_path, "\n")
-
-
-# Change the values of the variables as it is similar - this is so the plot will differ
 
 - library(dplyr)
 
@@ -187,9 +183,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 
 - head(final_data_modified)
 
-
-- colnames(final_data)
-
+<img width="1378" alt="Screen Shot 2023-10-23 at 5 20 56 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/dbdca2bd-cde1-43b6-8979-9f6c506615f0">
 
 - library(writexl)
 
