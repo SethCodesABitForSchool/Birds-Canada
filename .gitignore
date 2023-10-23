@@ -1,49 +1,65 @@
-# History files
-.Rhistory
-.Rapp.history
+# Set seed for reproducibility
+set.seed(123)
 
-# Session Data files
-.RData
-.RDataTmp
+# Generate years from 1920 to 2023
+years <- 1920:2023
 
-# User-specific files
-.Ruserdata
+# Generate random data for three variables: Temperature, Habitat Loss, and Food Availability
+temperature <- rnorm(length(years), mean = 20, sd = 5)  # Normal distribution for temperature
+habitat_loss <- runif(length(years), min = 0, max = 30)   # Uniform distribution for habitat loss
+food_availability <- rpois(length(years), lambda = 50)    # Poisson distribution for food availability
 
-# Example code in package build process
-*-Ex.R
+# Calculate bird populations based on a simple model using the three variables
+# You can modify this formula based on your specific scenario
+bird_population <- 1000 + 5 * temperature - 2 * habitat_loss + 3 * log(food_availability) + rnorm(length(years), mean = 0, sd = 100)
 
-# Output files from R CMD build
-/*.tar.gz
+# Generate random data for the number of chicks
+number_of_chicks <- rpois(length(years), lambda = 10)  # Poisson distribution for the number of chicks
 
-# Output files from R CMD check
-/*.Rcheck/
+# Create a data frame
+bird_data <- data.frame(
+  Year = years,
+  Temperature = temperature,
+  HabitatLoss = habitat_loss,
+  FoodAvailability = food_availability,
+  Population = bird_population,
+  NumberOfChicks = number_of_chicks
+)
+# Display the first few rows of the generated dataset
+head(bird_data)
 
-# RStudio files
-.Rproj.user/
+colnames(bird_data)
 
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
 
-# knitr and R markdown default cache directories
-*_cache/
-/cache/
+# Install and load the openxlsx package if not already installed
+install.packages("openxlsx")
+library(openxlsx)
 
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
+# Specify the file path where you want to save the Excel file
+file_path <- "/Users/sethmenon/Downloads/bird.xlsx"
 
-# R Environment Variables
-.Renviron
+# Write the data frame to an Excel file
+write.xlsx(bird_data, file_path, sheetName = "BirdData", rowNames = FALSE)
 
-# pkgdown site
-docs/
+# Confirm the successful export
+cat("Data exported to:", file_path, "\n")
 
-# translation temp files
-po/*~
+# Add a Location variable to each dataset
+bird_data$Location <- "Ontario"
+bird_data_long$Location <- "Manitoba"
 
-# RStudio Connect folder
-rsconnect/
+install.packages("dplyr")
+library(dplyr)
+combined_data <- bind_rows(bird_data, bird_data_long)
+
+
+
+
+
+
+
+
+
+
+
