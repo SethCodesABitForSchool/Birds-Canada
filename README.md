@@ -198,7 +198,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 - write_xlsx(final_data_modified, path = file_path)
 - cat("Data exported to", file_path, "\n")
 
-# Visualization
+# Visualization - There is not much differnce in the visual as the data is quite similar. 
 
 - install.packages("ggplot2")
 - library(ggplot2)
