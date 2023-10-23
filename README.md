@@ -1,6 +1,12 @@
 # Birds-Canada
 Birds Canada Simulation Data - This analysis should be viewed as a simulated interpretation or experiment since it is solely intended for demonstrative purposes. The data used in the analysis is simulated. 
 
+- I generated 2 datsets, each corresponding to the locations of Ontario and Manitoba.
+- The simulated data revolves around the population of wild birds, incorporating key variables influencing bird population dynamics, namely temperature, habitat loss, and food availability.
+- The dataset goes thru adjustments to align with needs. 
+- The final dataset is in a standardized format to ensure that the dataset follows a standard format that is meaningful.
+- Towards the end i did a regression analysis to see what variables are relevant or are the major factors that influence the population increase or decrease.
+
 ~ Seth
 
 # Set seed - 3 variables - Create a data frame
