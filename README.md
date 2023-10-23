@@ -7,6 +7,14 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 - The final dataset is in a standardized format to ensure that the dataset follows a standard format that is meaningful.
 - Towards the end i did a regression analysis to see what variables are relevant or are the major factors that influence the population increase or decrease.
 
+1. MetaData:
+
+- Temperature: This variable represents the simulated temperature data for each year.
+- HabitatLoss: This variable represents the simulated level of habitat loss for each year. 
+- FoodAvailability: This variable represents the simulated level of food availability for each year. 
+- Population: This variable represents the simulated bird population for each year. 
+- NumberOfChicks: This variable represents the simulated number of chicks for each year.
+
 ~ Seth
 
 # Set seed - 3 variables - Create a data frame
