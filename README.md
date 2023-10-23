@@ -1,5 +1,7 @@
 # Birds-Canada
-Birds Canada Simulation Data 
+Birds Canada Simulation Data - This analysis should be viewed as a simulated interpretation or experiment since it is solely intended for demonstrative purposes. The data used in the analysis is simulated. 
+
+~ Seth
 
 # Set seed - 3 variables - Create a data frame
 - set.seed(123)
