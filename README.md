@@ -6,9 +6,9 @@ Birds Canada Simulation Data
 
 - years <- 1920:2023
 
-- temperature <- rnorm(length(years), mean = 20, sd = 5)  # Normal distribution for temperature
-habitat_loss <- runif(length(years), min = 0, max = 30)   # Uniform distribution for habitat loss
-food_availability <- rpois(length(years), lambda = 50)    # Poisson distribution for food availability
+- temperature <- rnorm(length(years), mean = 20, sd = 5)  
+- habitat_loss <- runif(length(years), min = 0, max = 30)   
+- food_availability <- rpois(length(years), lambda = 50)
 
 # Calculate bird populations based on the three variables
 
@@ -30,6 +30,12 @@ food_availability <- rpois(length(years), lambda = 50)    # Poisson distribution
 - head(bird_data)
 
 - colnames(bird_data)
+
+
+<img width="954" alt="Screen Shot 2023-10-23 at 5 04 50 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/9e03b8f5-3cd3-4d0a-b66e-c2362d28a085">
+
+
+
 
 
 
@@ -55,6 +61,9 @@ food_availability <- rpois(length(years), lambda = 50)    # Poisson distribution
 - bird_data_long <- gather(bird_data, key = "Variable", value = "Value", -Year)
 
 - head(bird_data_long)
+
+<img width="955" alt="Screen Shot 2023-10-23 at 5 06 17 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/1f4d4080-e9cc-4e5c-b43b-2862d1412c28">
+
 
 - library(tidyr)
 
@@ -107,6 +116,9 @@ food_availability <- rpois(length(years), lambda = 50)    # Poisson distribution
 - colnames(combined_data)
 
 - head(combined_data)
+
+<img width="952" alt="Screen Shot 2023-10-23 at 5 07 16 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/0c263551-e310-4d32-9810-61d27a23af91">
+
 
 - library(tidyr)
 
@@ -198,6 +210,7 @@ food_availability <- rpois(length(years), lambda = 50)    # Poisson distribution
 
 - grid.arrange(plot_ontario, plot_manitoba, ncol = 1)
 
+![image](https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/9bd860d3-3ae6-4f8c-ac05-dc7aeb91cdcc)
 
 
 
