@@ -149,7 +149,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
   mutate(Chicks_Survived_Ontario = ifelse(NumberOfChicks_Ontario > 0, "Yes", "No"),
          Chicks_Survived_Manitoba = ifelse(NumberOfChicks_Manitoba > 0, "Yes", "No"))
 
-
+# THE FINAL DATA 
 - final_data <- combined_data_wide2 %>%
   select(Year, starts_with("Temperature"), starts_with("HabitatLoss"), starts_with("FoodAvailability"),
          starts_with("Population"), starts_with("Chicks_Survived"))
