@@ -17,7 +17,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 
 ~ Seth
 
-# Set seed - 3 variables - Create a data frame
+# Data 1 - 3 variables - Create a data frame - Ontario 
 - set.seed(123)
 
 - years <- 1920:2023
@@ -25,6 +25,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 - temperature <- rnorm(length(years), mean = 20, sd = 5)  
 - habitat_loss <- runif(length(years), min = 0, max = 30)   
 - food_availability <- rpois(length(years), lambda = 50)
+
 
 # Calculate bird populations based on the three variables
 
@@ -44,7 +45,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 
 
 - head(bird_data)
-
+- bird_data$Location <- "Ontario"
 - colnames(bird_data)
 - View(bird_data)
 
@@ -70,48 +71,22 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 
 - cat("Data exported to:", file_path, "\n")
 
-# Creating data 2 - In the first dataset, the variables arranged in columns, but in data 2 it is arranged in rows. 
+# Data 2 - Manitoba - In the first dataset, the variables arranged in columns, but in data 2 it is arranged in rows. 
 
 - install.packages("tidyr")
 - library(tidyr)
+- library(openxlsx)
+- bird_data_long4 <- pivot_longer(bird_data, cols = c("HabitatLoss", "FoodAvailability", "Population", "NumberOfChicks"), names_to = "Variable", values_to = "Value")
+- bird_data_long4$Location <- "Manitoba"
+- View(bird_data_long4)
 
-- bird_data_long <- gather(bird_data, key = "Variable", value = "Value", -Year)
+<img width="1054" alt="Screen Shot 2023-10-23 at 7 04 29 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/8c06c685-292f-4446-aa5e-239a793f9409">
 
-- View(bird_data_long)
+# later the manitoba data was converted to colunm format for ease.
 
 <img width="955" alt="Screen Shot 2023-10-23 at 5 06 17 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/1f4d4080-e9cc-4e5c-b43b-2862d1412c28">
 
-
-- library(tidyr)
-- library(openxlsx)
-- bird_data_long4 <- pivot_longer(bird_data, cols = c("HabitatLoss", "FoodAvailability", "Population", "NumberOfChicks"), names_to = "Variable", values_to = "Value")
-- View(bird_data_long4)
-
-<img width="862" alt="Screen Shot 2023-10-23 at 6 54 08 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/94958fba-ed18-4570-8010-5637cb79b692">
-
-- bird_data_long <- gather(bird_data, key = "Variable", value = "Value", -c(Year, Temperature, HabitatLoss, FoodAvailability, Population, NumberOfChicks))
-
-
-- file_path_long <- "path/to/your/folder/bird_simulation_data_long.xlsx"
-
-- write.xlsx(bird_data_long, file_path_long, sheetName = "BirdDataLong", row.names = FALSE)
-
-
-- cat("Long-format data exported to:", file_path_long, "\n")
-
-- library(tidyr)
-- library(openxlsx)
-
-- bird_data_long <- pivot_longer(bird_data, cols = -Year, names_to = "Variable", values_to = "Value")
-
-- file_path_long <- "/Users/sethmenon/Downloads/bird-manitoba.xlsx"
-
-- write.xlsx(bird_data_long, file_path_long, sheetName = "BirdDataLong", rowNames = FALSE)
-
-- cat("Long-format data exported to:", file_path_long, "\n")
-
-- bird_data$Location <- "Ontario"
-- bird_data_long$Location <- "Manitoba"
+# 2 Datasets are being combined here.
 
 - install.packages("dplyr")
 - library(dplyr)
@@ -152,6 +127,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 - cat("Data exported to", file_path, "\n")
 
 - head(combined_data_wide)
+
 - library(dplyr)
 
 # Chnage number of Chicks to a dummy variable 
@@ -159,7 +135,10 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
   mutate(Chicks_Survived_Ontario = ifelse(NumberOfChicks_Ontario > 0, "Yes", "No"),
          Chicks_Survived_Manitoba = ifelse(NumberOfChicks_Manitoba > 0, "Yes", "No"))
 
-# THE FINAL DATA - Changed the values of the variables as it is similar - this is so the plot will differ
+  <img width="1059" alt="Screen Shot 2023-10-23 at 7 12 58 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/2e2d2e91-042e-4211-8056-1a68962fd7db">
+
+
+# THE FINAL DATA with Modifications - Changed some values of the variables as it is similar - this is so the plot will differ
 
 - final_data <- combined_data_wide2 %>%
   select(Year, starts_with("Temperature"), starts_with("HabitatLoss"), starts_with("FoodAvailability"),
