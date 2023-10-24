@@ -86,27 +86,27 @@ ___Calculate bird populations based on the three variables____
 
 <img width="955" alt="Screen Shot 2023-10-23 at 5 06 17 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/1f4d4080-e9cc-4e5c-b43b-2862d1412c28">
 
-# 2 Datasets are being combined here.
+# Both of Datasets are being combined here. 
+
+Later the combined satset will be modified to create a wide-format dataset with separate columns for each variable and location. This is done because after the datasets were combined, the dates ended up being repeated 2 times for ontario and manitoba. The combined dataset had first 104 observations for Ontario from year 1920 to 2023 and the next 104 observations for Manitoba for the same year From 1920 to 2023. 
 
 - install.packages("dplyr")
 - library(dplyr)
-- combined_data <- bind_rows(bird_data, bird_data_long)
+- combined_data <- bind_rows(bird_data, bird_data_long4)
 
 - rm(combined_data)
 
 - library(tidyr)
 - library(openxlsx)
-
-- colnames(bird_data_long)
-- head(bird_data_long)
-
-- combined_data <- combined_data %>% 
-  mutate(variable_location = paste(Variable, Location, sep = "_"))
-
-- library(tidyr)
-- library(openxlsx)
-
 - colnames(combined_data)
+- combined_data_wide <- pivot_wider(
+  combined_data,
+  id_cols = c("Year"),
+  names_from = c("Location"),
+  values_from = c(Temperature, HabitatLoss, FoodAvailability, Population, NumberOfChicks)
+)
+
+View(combined_data_wide)
 
 - head(combined_data)
 
