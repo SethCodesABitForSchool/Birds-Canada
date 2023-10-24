@@ -46,6 +46,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 - head(bird_data)
 
 - colnames(bird_data)
+- View(bird_data)
 
 
 <img width="954" alt="Screen Shot 2023-10-23 at 5 04 50 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/9e03b8f5-3cd3-4d0a-b66e-c2362d28a085">
@@ -55,7 +56,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 
 
 
-# Codes to Export the data to an excel file 
+# Codes to Export the data to an excel file  - bird data 1
 
 - install.packages("openxlsx")
 - library(openxlsx)
@@ -69,23 +70,24 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 
 - cat("Data exported to:", file_path, "\n")
 
-# Creating data 2 
+# Creating data 2 - In the first dataset, the variables arranged in columns, but in data 2 it is arranged in rows. 
 
 - install.packages("tidyr")
 - library(tidyr)
 
 - bird_data_long <- gather(bird_data, key = "Variable", value = "Value", -Year)
 
-- head(bird_data_long)
+- View(bird_data_long)
 
 <img width="955" alt="Screen Shot 2023-10-23 at 5 06 17 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/1f4d4080-e9cc-4e5c-b43b-2862d1412c28">
 
 
 - library(tidyr)
+- library(openxlsx)
+- bird_data_long4 <- pivot_longer(bird_data, cols = c("HabitatLoss", "FoodAvailability", "Population", "NumberOfChicks"), names_to = "Variable", values_to = "Value")
+- View(bird_data_long4)
 
-- bird_data_long <- gather(bird_data, key = "Variable", value = "Value", -Year)
-
-- head(bird_data_long)
+<img width="862" alt="Screen Shot 2023-10-23 at 6 54 08 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/94958fba-ed18-4570-8010-5637cb79b692">
 
 - bird_data_long <- gather(bird_data, key = "Variable", value = "Value", -c(Year, Temperature, HabitatLoss, FoodAvailability, Population, NumberOfChicks))
 
