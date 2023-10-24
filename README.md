@@ -27,7 +27,7 @@ Birds Canada Simulation Data - This analysis should be viewed as a simulated int
 - food_availability <- rpois(length(years), lambda = 50)
 
 
-# Calculate bird populations based on the three variables
+___Calculate bird populations based on the three variables____
 
 - bird_population <- 1000 + 5 * temperature - 2 * habitat_loss + 3 * log(food_availability) + rnorm(length(years), mean = 0, sd = 100)
 
