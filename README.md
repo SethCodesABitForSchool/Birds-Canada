@@ -82,7 +82,7 @@ ___Calculate bird populations based on the three variables____
 
 <img width="1054" alt="Screen Shot 2023-10-23 at 7 04 29 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/8c06c685-292f-4446-aa5e-239a793f9409">
 
-# later the manitoba data was converted to colunm format for ease.
+# Later the manitoba data was converted to colunm format for ease.
 
 <img width="955" alt="Screen Shot 2023-10-23 at 5 06 17 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/1f4d4080-e9cc-4e5c-b43b-2862d1412c28">
 
@@ -132,7 +132,7 @@ ___The combined dataset where the data for Ontario and Manitoba is arranged in c
 
 - library(dplyr)
 
-# Chnage number of Chicks to a dummy variable 
+# Change number of Chicks to a dummy variable 
 - combined_data_wide <- combined_data_wide %>%
   mutate(Chicks_Survived_Ontario = ifelse(NumberOfChicks_Ontario > 0, "Yes", "No"),
          Chicks_Survived_Manitoba = ifelse(NumberOfChicks_Manitoba > 0, "Yes", "No"))
