@@ -94,6 +94,10 @@ Later the combined satset will be modified to create a wide-format dataset with 
 - library(dplyr)
 - combined_data <- bind_rows(bird_data, bird_data_long4)
 
+___The combined dataset where the data for Ontario and Manitoba is arranged in consecutive rows, resulting in repeating years for each location___
+
+<img width="952" alt="Screen Shot 2023-10-23 at 5 07 16 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/0c263551-e310-4d32-9810-61d27a23af91">
+
 - rm(combined_data)
 
 - library(tidyr)
@@ -106,11 +110,9 @@ Later the combined satset will be modified to create a wide-format dataset with 
   values_from = c(Temperature, HabitatLoss, FoodAvailability, Population, NumberOfChicks)
 )
 
-View(combined_data_wide)
+- View(combined_data_wide)
 
-- head(combined_data)
-
-<img width="952" alt="Screen Shot 2023-10-23 at 5 07 16 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/0c263551-e310-4d32-9810-61d27a23af91">
+<img width="1391" alt="Screen Shot 2023-10-23 at 7 29 18 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/6c021b2e-1b9f-475f-b84f-b87ac4f5d86b">
 
 
 - library(tidyr)
