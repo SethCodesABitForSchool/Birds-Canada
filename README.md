@@ -96,7 +96,7 @@ Later the combined satset will be modified to create a wide-format dataset with 
 
 ___The combined dataset where the data for Ontario and Manitoba is arranged in consecutive rows, resulting in repeating years for each location___
 
-<img width="952" alt="Screen Shot 2023-10-23 at 5 07 16 PM" src="https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/0c263551-e310-4d32-9810-61d27a23af91">
+![image](https://github.com/SethCodesABitForSchool/Birds-Canada/assets/147195203/107bf3f2-373c-4de7-b372-b2e4057c42f7)
 
 - rm(combined_data)
 
